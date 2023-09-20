@@ -54,5 +54,14 @@ return [
     'Categories'=>'فئات',
     'Delete'=>'مسح',
     'Update'=>'تعديل',
+    'courses' =>'الدورات',
+    'ADD NEW COURSE' => 'إضافة دورة جديدة',
+    'hours' => 'ساعات',
+    'price' => 'السعر',
+    'vendorName' => 'اسم البائع',
+    'categoryName' => 'اسم التصنيف',
+    'userName' => 'اسم المستخدم',
+
+
 
 ];

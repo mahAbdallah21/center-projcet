@@ -3,6 +3,7 @@
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\ProfileController;
@@ -34,7 +35,7 @@ Route::middleware('auth')->group(function () {
     {
          if($lang =='en'|| $lang =='ar'){
               session()->put('lang',$lang);
-              
+
               return back();
          }else{
             abort("403");
@@ -61,6 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('managers', ManagerController::class);
     Route::resource('categories', CategoryController::class);
     Route::resource('vendors', VendorController::class);
+    Route::resource('courses', CourseController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -49,6 +49,19 @@ return [
     'Logo'=>'Logo',
     'Images'=>'Images',
     'ADD NEW VENDOR'=>'ADD NEW VENDOR',
+    'courses' =>'courses',
+    'ADD NEW COURSE' =>'ADD NEW COURSE',
+    'hours' =>'Hours',
+    'price' =>'price',
+    'vendorName' =>'vendor Name',
+    'categoryName' =>'categoryName',
+
+    'userName' =>'userName',
+
+
+
+
+
 
 
 

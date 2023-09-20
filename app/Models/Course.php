@@ -22,6 +22,10 @@ class Course extends Model
 
         return $this->belongsToMany(User::class,'user_schedules');
     }
+    public function schedules(){
+
+        return $this->hasMany(Schedule::class);
+    }
     public function instanceors(){
 
         return $this->belongsToMany(User::class,'schedules');
