@@ -125,7 +125,7 @@
                                                                 <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                                             </svg>
 
-                                                            <h2 class="text-sm font-normal">{{$course->hours}}/h2>
+                                                            <h2 class="text-sm font-normal">{{$course->hours}}</h2>
                                                         </div>
                                                     </td>
 
@@ -133,7 +133,7 @@
                                                     <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$course->vendor->name}}</td>
                                                     <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$course->category->name}}</td>
 
-                                                    <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$course->user_id}} </td>
+                                                    <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$course->user_id }} </td>
                                                     <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">{{$course->created_at}}</td>
                                                     <td class="px-4 py-4 text-sm whitespace-nowrap">
                                                         <div class="flex items-center gap-x-6">

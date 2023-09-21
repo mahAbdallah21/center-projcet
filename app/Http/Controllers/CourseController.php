@@ -16,7 +16,7 @@ class CourseController extends Controller
     {
         $courses = Course::query();
 
-        return view('Courses.index', ['courses'=> $courses->orderBy('created_at', 'desc')->paginate(10)]);
+        return view('courses.index', ['courses'=> $courses->orderBy('created_at', 'desc')->paginate(10)]);
     }
 
     /**
@@ -26,7 +26,7 @@ class CourseController extends Controller
 
      {
 
-                return view('Courses.create', compact('Course'));
+        return view('courses.create');
     }
 
     /**
@@ -35,13 +35,17 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Job_title'=>'required',
-            'salary'=>'required|numeric',
+            'name'=>'required',
+            'price'=>'required|numeric',
             'user_id' => 'required',
+            'category_id' => 'required',
+            'vendor_id' => 'required',
+
+
 
         ]);
         Course::create($request->except('_token'));
-        return redirect()->route('Courses.index')->with('added', 'New Courses added');
+        return redirect()->route('courses.index')->with('added', 'New Courses added');
     }
 
     /**
@@ -59,10 +63,10 @@ class CourseController extends Controller
     {
 
 
-        $Course = Course::findOrFail($id);
+        $course = Course::findOrFail($id);
 
 
-        return view('Courses.edit' , ['Course'=>$Course ]);
+        return view('courses.edit' , ['course'=>$course ]);
     }
 
     /**
@@ -71,15 +75,17 @@ class CourseController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'Job_title'=>'required',
-            'salary'=>'required|numeric',
+            'name'=>'required',
+            'price'=>'required|numeric',
             'user_id' => 'required',
+            'category_id' => 'required',
+            'vendor_id' => 'required',
 
         ]);
         $Course = Course::findOrFail($id);
 
         $Course->update($request->except('_token'));
-        return redirect()->route('Courses.index')->with('added', ' Courses Update');
+        return redirect()->route('courses.index')->with('added', ' Courses Update');
     }
 
     /**
@@ -90,11 +96,11 @@ class CourseController extends Controller
         try{
 
             Course::destroy($id);
-            return redirect()->route('Courses.index')->with('added', ' Courses Delete');
+            return redirect()->route('courses.index')->with('added', ' Courses Delete');
 
         }catch(Exception $e){
            Log::info($e->getMessage());
-            return redirect()->route('Courses.index');
+            return redirect()->route('courses.index');
 
         }
     }
